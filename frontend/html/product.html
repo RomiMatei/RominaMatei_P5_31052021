@@ -19,8 +19,8 @@
 
     <!-- local files -->
     <link rel="stylesheet" type="text/css" href="/frontend/sass/style.css" />
-    <script src="/frontend/js/home.js" defer></script>
-    <script src="/frontend/js/common.js" defer></script>
+    <script src="/frontend/js/product.js"></script>
+    <script src="/frontend/js/common.js"></script>
     <script src="/frontend/js/index.js" defer></script>
   </head>
 
@@ -28,7 +28,7 @@
     <!-- Header -->
     <header class="home-page">
       <div class="hp-center home-page__wrapper">
-        <a href="#">
+        <a href="/frontend/html">
           <img
             src="/frontend/logo/logo.png"
             class="img-orinoco"
@@ -38,17 +38,19 @@
         </a>
         <a class="home-page__button" href="/frontend/html/cart.html">
           <span class="home-page__counter apparition"></span>
-          <img src="/frontend/logo/cart-logo.png" class="img--cart" alt="Cart Logo">
+          <img
+            src="/frontend/logo/cart-logo.png"
+            class="img--cart"
+            alt="Cart Logo"
+          />
         </a>
       </div>
     </header>
     <!--main content home page-->
     <main class="hp-center">
-<section class="hp-presentation">
-  <h1 class="apparition">Les plus beaux Teddy Bears</h1>
-  <div id="home-page-articles" class="row">
-  </div>
-</section>
+      <section class="hp-presentation">
+        <div id="product-view" class="row"></div>
+      </section>
     </main>
   </body>
 </html>
