@@ -5,7 +5,7 @@ class product {
   }
 
   async getProductItem(idProduct) {
-    let content = '';
+    let content = "";
     try {
       const productObj = await orinocoApi.commonData.productItem(idProduct);
       const unitPrice = orinocoApi.commonData.formatLocaleMoney(
@@ -15,8 +15,10 @@ class product {
     } catch (err) {
       console.error(err);
     }
-    console.log(this);
+
     this.self.innerHTML = content;
+    this.quantityUpdate();
+    this.addInMyCartClick();
   }
 
   static buildHtmlProduct(productObj, unitPrice) {
@@ -75,10 +77,53 @@ class product {
     `;
   }
   static getColorsOptions(color) {
-    let result = '';
+    let result = "";
     for (let i = 0, size = color.length; i < size; i++) {
       result += ` <option>${color[i]}</option>`;
     }
     return result;
+  }
+
+  quantityUpdate() {
+    document
+      .getElementById("minus")
+      .addEventListener("click", this.minusQuantity);
+    document
+      .getElementById("plus")
+      .addEventListener("click", this.plusQuantity);
+  }
+
+  minusQuantity() {
+    let getValue = parseInt(document.getElementById("quantity").value);
+    if (getValue > 1) {
+      let newValue = (getValue -= 1);
+      document.getElementById("quantity").value = newValue;
+    }
+  }
+
+  plusQuantity() {
+    let getValue = parseInt(document.getElementById("quantity").value);
+    let newValue = (getValue += 1);
+    document.getElementById("quantity").value = newValue;
+  }
+
+  addInMyCartClick() {
+    document
+      .getElementById('add-in-cart')
+      .addEventListener('click', this.addInMyCart);
+  }
+
+  addInMyCart() {
+    const searchParams = new URLSearchParams(
+      document.location.search.substring(1)
+    );
+    const productId = searchParams.get('id');
+    const quantity = parseInt(document.getElementById('quantity').value);
+
+    orinocoApi.commonData.addInCart(productId, quantity);
+    document.getElementById("quantity").value = 1;
+    // const modalBody =
+    //   'Félicitation, votre produit est ajouté au panier!<br>Vous souhaitez continuer vos achats ou aller directement au panier?';
+    // orinocoApi.commonData.modalPopup('Ajouté au panier', modalBody, true);
   }
 }
