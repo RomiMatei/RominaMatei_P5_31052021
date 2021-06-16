@@ -56,3 +56,152 @@ a {
     margin-bottom: 45px;
   }
 }
+
+
+/*=============================
+	 Start Footer CSS
+===============================*/
+.footer{
+  background-color: #d3d3d3;
+  padding-top: 50px;
+  font-size: 16px;
+}
+
+.footer .about {
+	padding-right: 50px;
+
+}
+.footer .single-footer h4 {
+	font-size: 17px;
+	font-weight: 600;
+	color: #000;
+	text-transform: capitalize;
+	margin-bottom: 30px;
+}
+.footer .about .logo{
+	margin-bottom:20px;
+}
+.footer .about .logo img{}
+.footer .about .text{
+	color:#000;
+	font-weight: 400;
+}
+.footer .about .call {
+	color: #000;
+	margin-top: 15px;
+	font-weight: 400;
+}
+.footer .about .call span{
+	display: block;
+}
+.footer .about .call a {
+	color: #9966cc;
+	font-size: 20px;
+	font-weight: 600;
+}
+.footer .links ul{}
+.footer .links ul li {
+	display: block;
+	margin-bottom: 8px;
+}
+.footer .links ul li:last-child{
+	margin-bottom:0;
+}
+.footer .links ul li a{
+	color:#000;
+	font-weight: 400;
+}
+.footer .links ul li a:hover{
+	color:#9966cc;
+	padding-left:10px;
+}
+.footer .social{}
+.footer .social .contact{}
+.footer .social .contact ul{}
+.footer .social .contact ul li {
+	color: #000;
+	display: block;
+	margin-bottom: 4px;
+	font-weight: 400;
+}
+.footer .contact ul li:last-child{
+	margin-bottom:0;
+}
+.footer .social ul {
+	margin-top: 20px;
+}
+.footer .social ul li{
+	display:inline-block;
+	margin-right:25px;
+}
+.footer .social ul li:last-child{
+	margin-right:0;
+}
+.footer .social ul li a{
+	color:#000;
+	display:block;
+	font-size:16px;
+}
+.footer .social ul li a:hover{
+	color:#9966cc;
+}
+/* Copyright */
+.footer .copyright{
+
+}
+.footer .copyright .inner{
+	border-top:1px solid #9966cc;
+	padding:20px 0;
+}
+.footer .copyright .left{}
+.footer .copyright .right{
+	float:right;
+}
+.footer .copyright p{
+	color:#000;
+}
+.footer .copyright p a{
+	color:#000;
+	text-decoration:underline;
+}
+/*=============================
+	End Footer CSS
+===============================*/
+
+/*The Modal (background)*/
+ .modal {
+   display: none; /* Hidden by default */
+   position: fixed; /* Stay in place */
+   z-index: 1; /* Sit on top */
+   left: 0;
+   top: 0;
+   width: 100%; /* Full width */
+   height: 100%; /* Full height */
+   overflow: auto; /* Enable scroll if needed */
+   background-color: rgb(0,0,0); /* Fallback color */
+   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+ }
+
+ /* Modal Content/Box */
+ .modal-content {
+   background-color: #fefefe;
+   margin: 15% auto; /* 15% from the top and centered */
+   padding: 20px;
+   border: 1px solid #888;
+   width: 80%; /* Could be more or less, depending on screen size */
+ }
+
+ /* The Close Button */
+ .modal .close {
+   color: #aaa;
+   float: right;
+   font-size: 28px;
+   font-weight: bold;
+ }
+
+ .modal .close:hover,
+ .modal .close:focus {
+   color: black;
+   text-decoration: none;
+   cursor: pointer;
+ }
