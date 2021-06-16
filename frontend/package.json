@@ -1,0 +1,28 @@
+{
+  "name": "orinoco",
+  "version": "1.0.0",
+  "description": "This is the back end server for Project 5 of the Junior Web Developer path.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RomiMatei/RominaMatei_P5_31052021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RomiMatei/RominaMatei_P5_31052021/issues"
+  },
+  "homepage": "https://github.com/RomiMatei/RominaMatei_P5_31052021#readme",
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.13.14",
+    "@babel/eslint-plugin": "^7.13.15",
+    "eslint": "^7.24.0",
+    "eslint-config-prettier": "^8.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.2.1"
+  }
+}

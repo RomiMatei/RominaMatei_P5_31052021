@@ -1,0 +1,6 @@
+{
+  "endOfLine":"auto",
+  "eslint":"airbnb-base",
+  "tabWidth": 2,
+  "trailingComma": "none"
+}
