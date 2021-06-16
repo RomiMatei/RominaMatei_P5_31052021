@@ -4,6 +4,10 @@ class home {
     this.getAllProductItems();
   }
 
+  /**
+   * Affiche la liste de tous les produits disponibles dans le backend
+   *
+   */
   async getAllProductItems() {
     let content = "";
     try {
@@ -20,6 +24,10 @@ class home {
     this.self.innerHTML = content;
   }
 
+  /**
+   * Construit le HTML de la présentation de la liste des produits
+   *
+   */
   static buildHtmlProduct(product, unitPrice) {
     const resultHtml = `
       <div class="col-md-4 col-sm-12 mb-4">
@@ -47,4 +55,21 @@ class home {
 
     return resultHtml;
   }
+  /**
+   * Permet d'ajouter dans le panier un produit directement depuis la liste
+   * sans retourner sur la page du produit
+   *
+   */
+ /* addInMyCartClick() {
+    this.self.querySelectorAll("a.add-in-cart").forEach((item) => {
+      item.addEventListener("click", (event) => {
+        event.preventDefault();
+        const product = event.target.getAttribute("data-id");
+        orinocoApi.commonData.addInCart(product, 1);
+        const modalBody =
+          "Félicitation, votre produit est ajouté au panier!<br>Vous souhaitez continuer vos achats ou aller directement au panier?";
+        orinocoApi.commonData.modalPopup("Ajouté au panier", modalBody, true);
+      });
+    });
+  }*/
 }

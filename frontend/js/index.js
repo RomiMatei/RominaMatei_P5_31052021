@@ -14,6 +14,8 @@ function definePage() {
       return new product(document.querySelector("#product-view"), idProduct);
     case "/frontend/html/cart.html":
       return new cartPage(document.querySelector("tbody.cart-table-line"));
+    case "/frontend/html/confirmation.html":
+      return new confirmation(document.querySelector("validate-page"));
     default:
       return new home(document.querySelector("#home-page-articles"));
   }

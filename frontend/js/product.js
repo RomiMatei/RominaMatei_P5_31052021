@@ -4,6 +4,10 @@ class product {
     this.getProductItem(idProduct);
   }
 
+  /**
+   * Affiche le produit avec les spécifications et construit le html
+   *
+   */
   async getProductItem(idProduct) {
     let content = "";
     try {
@@ -21,6 +25,10 @@ class product {
     this.addInMyCartClick();
   }
 
+  /**
+   * Construit le HTML du produit sur la page product.html
+   *
+   */
   static buildHtmlProduct(productObj, unitPrice) {
     return `
     <div class="col-12 col-lg-6">
@@ -76,6 +84,11 @@ class product {
       </div>
     `;
   }
+
+  /**
+   * Construit un champ select affichant les options du produit
+   *
+   */
   static getColorsOptions(color) {
     let result = "";
     for (let i = 0, size = color.length; i < size; i++) {
@@ -84,6 +97,10 @@ class product {
     return result;
   }
 
+  /**
+   * Ajoute une écoute sur le boutton plus et moins lorsqu'on modifie la quantité
+   *
+   */
   quantityUpdate() {
     document
       .getElementById("minus")
@@ -93,6 +110,10 @@ class product {
       .addEventListener("click", this.plusQuantity);
   }
 
+  /**
+   * Décrémente la quantité de produit maximum jusqu'à 1
+   *
+   */
   minusQuantity() {
     let getValue = parseInt(document.getElementById("quantity").value);
     if (getValue > 1) {
@@ -101,29 +122,38 @@ class product {
     }
   }
 
+  /**
+   * Incrémente la quantité de produit par 1
+   *
+   */
   plusQuantity() {
     let getValue = parseInt(document.getElementById("quantity").value);
     let newValue = (getValue += 1);
     document.getElementById("quantity").value = newValue;
   }
 
+  /**
+   * Ecoute le click sur Ajouter au panier
+   *
+   */
   addInMyCartClick() {
     document
-      .getElementById('add-in-cart')
-      .addEventListener('click', this.addInMyCart);
+      .getElementById("add-in-cart")
+      .addEventListener("click", this.addInMyCart);
   }
 
+  /**
+   * Ajoute au panier le produit et la quantité saisie
+   *
+   */
   addInMyCart() {
     const searchParams = new URLSearchParams(
       document.location.search.substring(1)
     );
-    const productId = searchParams.get('id');
-    const quantity = parseInt(document.getElementById('quantity').value);
+    const productId = searchParams.get("id");
+    const quantity = parseInt(document.getElementById("quantity").value);
 
     orinocoApi.commonData.addInCart(productId, quantity);
     document.getElementById("quantity").value = 1;
-    // const modalBody =
-    //   'Félicitation, votre produit est ajouté au panier!<br>Vous souhaitez continuer vos achats ou aller directement au panier?';
-    // orinocoApi.commonData.modalPopup('Ajouté au panier', modalBody, true);
   }
 }

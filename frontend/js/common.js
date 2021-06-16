@@ -2,17 +2,29 @@ class commonData {
   productItems = null;
   product = null;
 
+  /**
+   * Creates an instance of commonData.
+   */
   constructor(self) {
     this.self = self;
   }
 
+  /**
+   * Permet d'appeler tous les produits depuis le backend
+   *
+   */
   async allProductItems() {
     if (this.productItems !== null) return this.productItems;
     const data = await fetch(this.self);
     this.productItems = await data.json();
+    // this.countCart();
     return this.productItems;
   }
 
+  /**
+   * Appel d'un produit unique depuis le backend avec l'id du produit
+   *
+   */
   async productItem(productId) {
     if (productId !== null) {
       const apiUrl = "http://localhost:3000/api/teddies/";
@@ -31,12 +43,20 @@ class commonData {
     }).format(total);
   }
 
+  /**
+   * Boucle d'ajout de quantité de produit dans le panier
+   *
+   */
   addInCart(productId, qty = 1) {
     for (let i = 1; i <= qty; i++) {
       this.setCart(productId);
     }
   }
 
+  /**
+   * Ajout d'un produit dans le panier et stockage dans le localStorage
+   *
+   */
   setCart(cart) {
     if (cart !== null) {
       let productItemStorage = [];
@@ -47,10 +67,12 @@ class commonData {
 
       localStorage.setItem("cart", JSON.stringify(productItemStorage));
     }
-    // this.countCart();
-    // this.cartList();
   }
 
+  /**
+   * Affiche les produits du panier stocké dans le localstorage
+   *
+   */
   getCart() {
     return localStorage.getItem("cart") === null
       ? []
@@ -60,8 +82,6 @@ class commonData {
   /**
    * Permet d'effacer un article du panier
    *
-   * @param   {String}  productId Id du produit
-   * @memberof apiDatas
    */
   removeProductInCart(productId) {
     const newCart = [];
@@ -74,38 +94,11 @@ class commonData {
     for (let x = 0, size = newCart.length; x < size; x++) {
       this.setCart(newCart[x]);
     }
-    this.cartList();
-  }
-
-  /**
-   * Retourne le nombre d'articles dans le panier et les affiche sur l'icone de pannier
-   *
-   * @memberof apiDatas
-   */
-  countCart() {
-    let cartContent = this.getCart();
-
-    if (cartContent.length > 0) {
-      cartContent = JSON.parse(this.getCart());
-    } else {
-      cartContent = 0;
-    }
-
-    if (cartContent !== 0) {
-      document.getElementsByClassName("total-count")[0].innerText =
-        cartContent.length;
-      document.getElementsByClassName("shop-cart-items")[0].innerText =
-        cartContent.length + " Article(s)";
-    }
   }
 
   /**
    * Regroupe les id identiques des articles dans le panier
    *
-   * @return  {Object}  retourne un objet
-   * key            | value
-   * id produit     | quantité total correspondant à l'ID du produit
-   * @memberof apiDatas
    */
   groupCart() {
     let cardDict = {};
@@ -121,5 +114,27 @@ class commonData {
       }
     }
     return cardDict;
+  }
+
+  orderTeddiesInCart(orderItems) {
+    fetch('http://localhost:3000/api/teddies/order', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      mode: 'cors',
+      body: orderItems
+    })
+      .then((result) => {
+        return result.json();
+      })
+      .then((confirmation) => {
+        window.location.assign(
+          './confirmation.html?orderId=' + confirmation.orderId
+        );
+      })
+      .catch((err) => {
+        console.error('erreur : ' + err.name);
+      });
   }
 }
