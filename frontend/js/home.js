@@ -22,6 +22,7 @@ class home {
       console.error(err);
     }
     this.self.innerHTML = content;
+    this.addInMyCartClick();
   }
 
   /**
@@ -60,7 +61,7 @@ class home {
    * sans retourner sur la page du produit
    *
    */
- /* addInMyCartClick() {
+  addInMyCartClick() {
     this.self.querySelectorAll("a.add-in-cart").forEach((item) => {
       item.addEventListener("click", (event) => {
         event.preventDefault();
@@ -71,5 +72,5 @@ class home {
         orinocoApi.commonData.modalPopup("Ajouté au panier", modalBody, true);
       });
     });
-  }*/
+  }
 }

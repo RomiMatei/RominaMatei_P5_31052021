@@ -2,6 +2,7 @@ class cartPage {
   constructor(self) {
     this.self = self;
     this.cartListProducts();
+    this.validateOrder();
   }
 
   async cartListProducts() {
@@ -57,9 +58,9 @@ class cartPage {
   static buildHtmlCartTable(product, unitPrice, qty = 1, total) {
     return `
       <tr id="${product._id}">
-        <td class="img-td" data-title="No"><img class="img-fluid" src="${product.imageUrl}" width="170" alt="#"></td>
+        <td class="img-td" data-title="No"><a href="product.html?id=${product._id}"><img class="img-fluid" src="${product.imageUrl}" width="170" alt="#"/></a></td>
         <td class="product-des" data-title="Description">
-          <p class="product-name"><b><a href="produit.html?id=${product._id}">${product.name}</a></b></p>
+          <p class="product-name"><b><a href="product.html?id=${product._id}">${product.name}</a></b></p>
           <p class="product-des">${product.description}</p>
         </td>
         <td class="price" data-title="Price"><span>${unitPrice}</span></td>
@@ -287,7 +288,6 @@ class cartPage {
       products
     });
 
-    localStorage.setItem("contact", JSON.stringify(contact));
     orinocoApi.commonData.orderTeddiesInCart(orderCart);
   }
 }
