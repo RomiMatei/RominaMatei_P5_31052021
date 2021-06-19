@@ -17,7 +17,6 @@ class commonData {
     if (this.productItems !== null) return this.productItems;
     const data = await fetch(this.self);
     this.productItems = await data.json();
-    // this.countCart();
     return this.productItems;
   }
 
@@ -114,6 +113,33 @@ class commonData {
       }
     }
     return cardDict;
+  }
+
+  modalPopup(title, content, goCart = false) {
+    const modal = document.getElementById('orinocoModal');
+    const titleContent = document.getElementsByClassName('modal-title')[0];
+    const bodyContent = document.getElementById('modal-body');
+    const span = document.getElementsByClassName('close')[0];
+    const footer = document.getElementsByClassName('modal-footer')[0];
+    const closeBtn = document.getElementsByClassName('close-btn')[0];
+
+    modal.style.display = 'block';
+
+    titleContent.innerHTML = title;
+    bodyContent.innerHTML = content;
+
+    if (goCart === true) {
+      const cartButton = document.getElementById('get-cart-btn');
+      cartButton.classList.add('visible');
+      cartButton.classList.remove('invisible');
+    }
+
+    span.onclick = function () {
+      modal.style.display = 'none';
+    };
+    closeBtn.onclick = function () {
+      modal.style.display = 'none';
+    };
   }
 
   orderTeddiesInCart(orderItems) {

@@ -155,5 +155,8 @@ class product {
 
     orinocoApi.commonData.addInCart(productId, quantity);
     document.getElementById("quantity").value = 1;
+    const modalBody =
+      "Félicitation, votre produit est ajouté au panier!<br>Vous souhaitez continuer vos achats ou aller directement au panier?";
+    orinocoApi.commonData.modalPopup("Ajouté au panier", modalBody, true);
   }
 }
