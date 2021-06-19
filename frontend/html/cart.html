@@ -38,7 +38,11 @@
         </a>
         <a class="home-page__button" href="/frontend/html/cart.html">
           <span class="home-page__counter apparition"></span>
-          <img src="/frontend/logo/cart-logo.png" class="img--cart" alt="Cart Logo">
+          <img
+            src="/frontend/logo/cart-logo.png"
+            class="img--cart"
+            alt="Cart Logo"
+          />
         </a>
       </div>
     </header>
@@ -62,7 +66,9 @@
                     <th class="text-center">PRIX</th>
                     <th class="text-center">QUANTITE</th>
                     <th class="text-center">TOTAL</th>
-                    <th class="text-center"><i class="ti-trash remove-icon"></i></th>
+                    <th class="text-center">
+                      <i class="ti-trash remove-icon"></i>
+                    </th>
                   </tr>
                 </thead>
                 <tbody class="cart-table-line">
@@ -82,8 +88,14 @@
                   <div class="col-lg-8 col-md-5 col-12">
                     <div class="left">
                       <div class="form-group form-check">
-                        <input class="form-check-input" name="news" id="delivery-cost" type="checkbox">
-                        <label class="checkbox-inline" for="delivery-cost">Livraison Express (+10€)
+                        <input
+                          class="form-check-input"
+                          name="news"
+                          id="delivery-cost"
+                          type="checkbox"
+                        />
+                        <label class="checkbox-inline" for="delivery-cost"
+                          >Livraison Express (+10€)
                         </label>
                       </div>
                     </div>
@@ -91,12 +103,41 @@
                   <div class="col-lg-4 col-md-7 col-12">
                     <div class="right">
                       <ul class="list-group">
-                        <li class="list-group-item d-flex justify-content-between align-items-center">Total<span class="order-subtotal">0.00 €</span></li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">Livraison<span class="delivery-cost">Offert</span></li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">A Payer<span class="order-paid">0.00 €</span></li>
+                        <li
+                          class="
+                            list-group-item
+                            d-flex
+                            justify-content-between
+                            align-items-center
+                          "
+                        >
+                          Total<span class="order-subtotal">0.00 €</span>
+                        </li>
+                        <li
+                          class="
+                            list-group-item
+                            d-flex
+                            justify-content-between
+                            align-items-center
+                          "
+                        >
+                          Livraison<span class="delivery-cost">Offert</span>
+                        </li>
+                        <li
+                          class="
+                            list-group-item
+                            d-flex
+                            justify-content-between
+                            align-items-center
+                          "
+                        >
+                          A Payer<span class="order-paid">0.00 €</span>
+                        </li>
                       </ul>
                       <div class="button5">
-                        <a href="/" class="btn btn-success">Continuer mes achats</a>
+                        <a href="/frontend/html/index.html" class="btn btn-success"
+                          >Continuer mes achats</a
+                        >
                       </div>
                     </div>
                   </div>
@@ -108,178 +149,262 @@
           <div class="row">
             <div class="col-md-12 register-form">
               <div class="card p-5 mt-5">
-              <h2>Vos informations</h2>
-              <form id="customer-form">
-                <div class="form-row">
-                  <div class="col-md-6 mb-3">
-                    <label for="validationFirstName">Prènom</label>
-                    <input type="text" class="form-control" id="validationFirstName" required>
-                    <div class="invalid-feedback" aria-hidden="true">
-                      Merci d'indiquer votre prènom!
-                    </div>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="validationName">Nom</label>
-                    <input type="text" class="form-control" id="validationName" required>
-                    <div class="invalid-feedback" aria-hidden="true">
-                      Merci d'indiquer votre nom!
-                    </div>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="col-md-6 mb-3">
-                    <label for="validationRue">Rue</label>
-                    <input type="text" class="form-control" id="validationRue" aria-describedby="validationRueFeedback" required>
-                    <div id="validationRueFeedback" class="invalid-feedback">
-                      Merci d'indiquer une rue valide
-                    </div>
-                  </div>
-                  <div class="col-md-3 mb-3">
-                    <label for="validationVille">Ville</label>
-                    <input type="text" class="form-control" id="validationVille" aria-describedby="validationVilleFeedback" required>
-                    <div id="validationVilleFeedback" class="invalid-feedback">
-                      Merci d'indiquer une ville valide
-                    </div>
-                  </div>
-                  <div class="col-md-3 mb-3">
-                    <label for="validationCodePostal">Zip</label>
-                    <input type="text" class="form-control" id="validationCodePostal" aria-describedby="validationCodePostalFeedback">
-                    <div id="validationCodePostalFeedback" class="invalid-feedback">
-                      Indiquer un code postal valide
-                    </div>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="col-md-6">
-                    <label for="validatedInputEmail">Email</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text" >@</span>
+                <h2>Vos informations</h2>
+                <form id="customer-form">
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="validationFirstName">Prènom</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="validationFirstName"
+                        required
+                      />
+                      <div class="invalid-feedback" aria-hidden="true">
+                        Merci d'indiquer votre prènom!
                       </div>
-                      <input type="text" class="form-control" id="validatedInputEmail" aria-describedby="validatedInputEmail" required>
-
                     </div>
-                    <div class="invalid-feedback">
-                      Merci d'indiquer un email valide
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="validatedInputEmailConfirmation">Confirmer Votre Email</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text" >@</span>
+                    <div class="col-md-6 mb-3">
+                      <label for="validationName">Nom</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="validationName"
+                        required
+                      />
+                      <div class="invalid-feedback" aria-hidden="true">
+                        Merci d'indiquer votre nom!
                       </div>
-                      <input type="text" class="form-control" id="validatedInputEmailConfirmation" aria-describedby="validatedInputEmailConfirmation" required>
-                    </div>
-                    <div class="invalid-feedback">
-                      Merci d'indiquer le même email que sur le champ précedent
                     </div>
                   </div>
-                </div>
-                <div class="form-group">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
-                    <label class="form-check-label" for="invalidCheck3">
-                      J'accepte les conditions generales de vente
-                    </label>
-                    <div  id="invalidCheck3Feedback" class="invalid-feedback">
-                      Vous devez accepter les CGV.
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="validationRue">Rue</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="validationRue"
+                        aria-describedby="validationRueFeedback"
+                        required
+                      />
+                      <div id="validationRueFeedback" class="invalid-feedback">
+                        Merci d'indiquer une rue valide
+                      </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                      <label for="validationVille">Ville</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="validationVille"
+                        aria-describedby="validationVilleFeedback"
+                        required
+                      />
+                      <div
+                        id="validationVilleFeedback"
+                        class="invalid-feedback"
+                      >
+                        Merci d'indiquer une ville valide
+                      </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                      <label for="validationCodePostal">Zip</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="validationCodePostal"
+                        aria-describedby="validationCodePostalFeedback"
+                      />
+                      <div
+                        id="validationCodePostalFeedback"
+                        class="invalid-feedback"
+                      >
+                        Indiquer un code postal valide
+                      </div>
                     </div>
                   </div>
-                </div>
-                <button class="btn-primary btn" id="submit-order" type="submit">Confirmer ma commande</button>
-              </form>
+                  <div class="form-row">
+                    <div class="col-md-6">
+                      <label for="validatedInputEmail">Email</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">@</span>
+                        </div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="validatedInputEmail"
+                          aria-describedby="validatedInputEmail"
+                          required
+                        />
+                      </div>
+                      <div class="invalid-feedback">
+                        Merci d'indiquer un email valide
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="validatedInputEmailConfirmation"
+                        >Confirmer Votre Email</label
+                      >
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">@</span>
+                        </div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="validatedInputEmailConfirmation"
+                          aria-describedby="validatedInputEmailConfirmation"
+                          required
+                        />
+                      </div>
+                      <div class="invalid-feedback">
+                        Merci d'indiquer le même email que sur le champ
+                        précedent
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="invalidCheck3"
+                        aria-describedby="invalidCheck3Feedback"
+                        required
+                      />
+                      <label class="form-check-label" for="invalidCheck3">
+                        J'accepte les conditions generales de vente
+                      </label>
+                      <div id="invalidCheck3Feedback" class="invalid-feedback">
+                        Vous devez accepter les CGV.
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    class="btn-primary btn"
+                    id="submit-order"
+                    type="submit"
+                  >
+                    Confirmer ma commande
+                  </button>
+                </form>
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </section>
     </main>
-           <!-- Start Footer Area -->
-<footer class="footer">
-  <!-- Footer Top -->
-  <div class="footer-top section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 col-md-6 col-12">
-          <!-- Single Widget -->
-          <div class="single-footer about">
-            <div class="logo">
-              <a href="index.html"><img src="/frontend/logo/logo-footer.png" alt="#" /></a>
+    <!-- Start Footer Area -->
+    <footer class="footer">
+      <!-- Footer Top -->
+      <div class="footer-top section">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5 col-md-6 col-12">
+              <!-- Single Widget -->
+              <div class="single-footer about">
+                <div class="logo">
+                  <a href="index.html"
+                    ><img src="/frontend/logo/logo-footer.png" alt="#"
+                  /></a>
+                </div>
+                <p class="text">
+                  Praesent dapibus, neque id cursus ucibus, tortor neque egestas
+                  augue, magna eros eu erat. Aliquam erat volutpat. Nam dui mi,
+                  tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+                </p>
+                <p class="call">
+                  Une question? Appelez nous 24/24h et 7/7j<span
+                    ><a href="tel:123456789">+33 01 02 03 04</a></span
+                  >
+                </p>
+              </div>
+              <!-- End Single Widget -->
             </div>
-            <p class="text">
-              Praesent dapibus, neque id cursus ucibus, tortor neque egestas
-              augue, magna eros eu erat. Aliquam erat volutpat. Nam dui mi,
-              tincidunt quis, accumsan porttitor, facilisis luctus, metus.
-            </p>
-            <p class="call">
-              Une question? Appelez nous 24/24h et 7/7j<span
-                ><a href="tel:123456789">+33 01 02 03 04</a></span
-              >
-            </p>
-          </div>
-          <!-- End Single Widget -->
-        </div>
-        <div class="col-lg-2 col-md-6 col-12">
-          <!-- Single Widget -->
-          <div class="single-footer links">
-            <h4>Information</h4>
-            <ul>
-              <li><a href="#">A Propos de nous</a></li>
-              <li><a href="#">Faq</a></li>
-              <li><a href="#">Termes & Conditions</a></li>
-              <li><a href="#">Contactez nous</a></li>
-              <li><a href="#">Aide</a></li>
-            </ul>
-          </div>
-          <!-- End Single Widget -->
-        </div>
-        <div class="col-lg-2 col-md-6 col-12">
-          <!-- Single Widget -->
-          <div class="single-footer links">
-            <h4>Service Client</h4>
-            <ul>
-              <li><a href="#">Methodes de paiement</a></li>
-              <li><a href="#">Retours</a></li>
-              <li><a href="#">Livraisons</a></li>
-              <li><a href="#">Politique de confidentialité</a></li>
-            </ul>
-          </div>
-          <!-- End Single Widget -->
-        </div>
-        <div class="col-lg-3 col-md-6 col-12">
-          <!-- Single Widget -->
-          <div class="single-footer social">
-            <h4>Venez nous voir</h4>
-            <!-- Single Widget -->
-            <div class="contact">
-              <ul>
-                <li>42 Av Champs Elysées</li>
-                <li>75000 Paris.</li>
-                <li>info@orinoco.com</li>
-                <li>+33 01 02 03 04</li>
-              </ul>
+            <div class="col-lg-2 col-md-6 col-12">
+              <!-- Single Widget -->
+              <div class="single-footer links">
+                <h4>Information</h4>
+                <ul>
+                  <li><a href="#">A Propos de nous</a></li>
+                  <li><a href="#">Faq</a></li>
+                  <li><a href="#">Termes & Conditions</a></li>
+                  <li><a href="#">Contactez nous</a></li>
+                  <li><a href="#">Aide</a></li>
+                </ul>
+              </div>
+              <!-- End Single Widget -->
             </div>
+            <div class="col-lg-2 col-md-6 col-12">
+              <!-- Single Widget -->
+              <div class="single-footer links">
+                <h4>Service Client</h4>
+                <ul>
+                  <li><a href="#">Methodes de paiement</a></li>
+                  <li><a href="#">Retours</a></li>
+                  <li><a href="#">Livraisons</a></li>
+                  <li><a href="#">Politique de confidentialité</a></li>
+                </ul>
+              </div>
+              <!-- End Single Widget -->
+            </div>
+            <div class="col-lg-3 col-md-6 col-12">
+              <!-- Single Widget -->
+              <div class="single-footer social">
+                <h4>Venez nous voir</h4>
+                <!-- Single Widget -->
+                <div class="contact">
+                  <ul>
+                    <li>42 Av Champs Elysées</li>
+                    <li>75000 Paris.</li>
+                    <li>info@orinoco.com</li>
+                    <li>+33 01 02 03 04</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Footer Top -->
+        <div class="copyright">
+          <div class="container">
+            <div class="inner">
+              <div class="row">
+                <div class="col-lg-6 col-12">
+                  <div class="left">
+                    <p>Copyright © 2020 Orinoco - All Rights Reserved.</p>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-12"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div id="orinocoModal" class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"></h5>
+            <button class="close">&times;</button>
+          </div>
+          <div class="modal-body">
+            <p id="modal-body">Some text in the Modal..</p>
+          </div>
+          <div class="modal-footer">
+            <a
+              id="get-cart-btn"
+              href="cart.html"
+              class="btn btn-success invisible"
+              >Aller au panier</a
+            >
+            <button class="btn btn-primary close-btn">Fermer</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- End Footer Top -->
-  <div class="copyright">
-    <div class="container">
-      <div class="inner">
-        <div class="row">
-          <div class="col-lg-6 col-12">
-            <div class="left">
-              <p>Copyright © 2020 Orinoco - All Rights Reserved.</p>
-            </div>
-          </div>
-          <div class="col-lg-6 col-12"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-</footer>
   </body>
 </html>
