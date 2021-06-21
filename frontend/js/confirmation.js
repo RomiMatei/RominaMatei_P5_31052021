@@ -14,7 +14,7 @@ class confirmation {
   }
 
   /**
-   * Construit le html de confirmation de la commanded
+   * Construit le html de confirmation
    *
    */
   confirmationHtml() {
