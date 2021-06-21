@@ -9,7 +9,15 @@ class cartPage {
     let content = "";
     let total = 0;
     try {
-      const cartContent = await orinocoApi.commonData.groupCart();
+      let cartContent;
+      await orinocoApi.commonData
+        .groupCart()
+        .then((result) => {
+          cartContent = result;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
 
       for (const [key, value] of Object.entries(cartContent)) {
         const product = await orinocoApi.commonData.productItem(key);

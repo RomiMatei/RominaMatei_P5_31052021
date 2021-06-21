@@ -99,10 +99,10 @@ class commonData {
    * Regroupe les id identiques des articles dans le panier
    *
    */
-  groupCart() {
+  async groupCart() {
     let cardDict = {};
     if (this.getCart().length !== 0) {
-      const cartContent = JSON.parse(this.getCart());
+      const cartContent = await JSON.parse(this.getCart());
 
       for (let i = 0; i < cartContent.length; i++) {
         if (cardDict[cartContent[i]]) {

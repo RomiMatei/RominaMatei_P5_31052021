@@ -11,7 +11,15 @@ class product {
   async getProductItem(idProduct) {
     let content = "";
     try {
-      const productObj = await orinocoApi.commonData.productItem(idProduct);
+      let productObj;
+      await orinocoApi.commonData
+        .productItem(idProduct)
+        .then((result) => {
+          productObj = result;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
       const unitPrice = orinocoApi.commonData.formatLocaleMoney(
         productObj.price / 100
       );
