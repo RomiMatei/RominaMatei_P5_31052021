@@ -156,5 +156,4 @@ lib
 **/node_modules
 **/package-lock.json
 **/.eslintrc.json
-**/Plan-de-test.xlsx
 .env
